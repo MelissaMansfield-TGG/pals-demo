@@ -1,0 +1,1255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>P.A.L.S. Pet Awareness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --ground:#EEF4F3;
+    --surface:#FFFFFF;
+    --surface-2:#F6FAF9;
+    --ink:#000000;
+    --ink-2:#000000;
+    --ink-3:#000000;
+    --line:#D2DFDE;
+    --line-2:#B9CBCA;
+    --teal:#005B60;
+    --teal-mid:#1E8F93;
+    --teal-lite:#64D2D8;
+    --gold:#B98C0F;
+    --alert:#B4332A;
+    --alert-soft:#FBEDEB;
+    --ray:#9CCFCD;
+    --hit:#0FA3A9;
+    --floor:#FBF4E6;
+    --wall:#C7B695;
+    --rug:#EBDCC2;
+    --fridge:#DFE7EA; --fridge-ink:#9FB0B7;
+    --pantry:#B9905E; --pantry-ink:#8E6A3F;
+    --stove:#D9D6CE;  --stove-ink:#5E5A52;
+    --sink:#DCC7A6;   --sink-ink:#BFD5DA;
+    --counter:#DCC7A6; --counter-ink:#B9A07A;
+    --island:#8FC7C4; --island-ink:#4E9A97;
+    --table:#C99B6A; --table-ink:#9B7146;
+    --chair:#B8895C; --chair-ink:#8E6640;
+    --dogbed:#E9BDB4; --dogbed-ink:#D49C91;
+    --mat:#EBDCC2;
+    --food:#8B5E34; --water:#7FB6D9;
+    --plant:#6FAE6B; --pot:#B97A56;
+    --person:#E0A32E;
+    --person-ink:#6B4A08;
+    --hair:#CFCBC3;
+    --notice-soft:#FBF3DC;
+    --dog:#D6AC70;
+    --dog-ink:#5C3A1E;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#081211;
+      --surface:#0F1D1D;
+      --surface-2:#142726;
+      --ink:#E7F0EE;
+      --ink-2:#A3B8B7;
+      --ink-3:#7B9190;
+      --line:#20393A;
+      --line-2:#2C4A4B;
+      --teal:#64D2D8;
+      --teal-mid:#3FB0B6;
+      --teal-lite:#8FE4E9;
+      --gold:#E0B33C;
+      --alert:#F2857A;
+      --alert-soft:#2A1614;
+      --ray:#2F5F5E;
+      --hit:#6FE0E4;
+      --floor:#26211A;
+      --wall:#5A4E3C;
+      --rug:#3A3128;
+      --fridge:#3B4A50; --fridge-ink:#7E939B;
+      --pantry:#6E5236; --pantry-ink:#9C7A56;
+      --stove:#3A3A38;  --stove-ink:#8E8A82;
+      --sink:#7E6B4F;   --sink-ink:#5E8A93;
+      --counter:#7E6B4F; --counter-ink:#A08B6B;
+      --island:#3E7E7C; --island-ink:#5FA9A6;
+      --table:#8B6A45; --table-ink:#B08A5F;
+      --chair:#7A5A3C; --chair-ink:#9C7A56;
+      --dogbed:#9C6A66; --dogbed-ink:#B8837E;
+      --mat:#3A3128;
+      --food:#A9764A; --water:#5F9CC2;
+      --plant:#4E8D4B; --pot:#8C5A3D;
+      --person:#E8B54A;
+      --person-ink:#F8E3B0;
+      --hair:#E2DED6;
+      --notice-soft:#2A2410;
+      --dog:#C48F5F;
+      --dog-ink:#F0D9BF;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#081211;
+    --surface:#0F1D1D;
+    --surface-2:#142726;
+    --ink:#E7F0EE;
+    --ink-2:#A3B8B7;
+    --ink-3:#7B9190;
+    --line:#20393A;
+    --line-2:#2C4A4B;
+    --teal:#64D2D8;
+    --teal-mid:#3FB0B6;
+    --teal-lite:#8FE4E9;
+    --gold:#E0B33C;
+    --alert:#F2857A;
+    --alert-soft:#2A1614;
+    --ray:#2F5F5E;
+    --hit:#6FE0E4;
+    --floor:#26211A;
+    --wall:#5A4E3C;
+    --rug:#3A3128;
+    --fridge:#3B4A50; --fridge-ink:#7E939B;
+    --pantry:#6E5236; --pantry-ink:#9C7A56;
+    --stove:#3A3A38;  --stove-ink:#8E8A82;
+    --sink:#7E6B4F;   --sink-ink:#5E8A93;
+    --counter:#7E6B4F; --counter-ink:#A08B6B;
+    --island:#3E7E7C; --island-ink:#5FA9A6;
+    --table:#8B6A45; --table-ink:#B08A5F;
+    --chair:#7A5A3C; --chair-ink:#9C7A56;
+    --dogbed:#9C6A66; --dogbed-ink:#B8837E;
+    --mat:#3A3128;
+    --food:#A9764A; --water:#5F9CC2;
+    --plant:#4E8D4B; --pot:#8C5A3D;
+    --person:#E8B54A;
+    --person-ink:#F8E3B0;
+    --hair:#E2DED6;
+    --notice-soft:#2A2410;
+    --dog:#C48F5F;
+    --dog-ink:#F0D9BF;
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size:15px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding-inline:16px;
+    padding-block:28px 56px;
+  }
+
+  .eyebrow{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin:0 0 10px;
+  }
+  h1{
+    font-size:clamp(26px,4.2vw,36px);
+    line-height:1.15;
+    font-weight:600;
+    letter-spacing:-.015em;
+    margin:0 0 10px;
+    text-wrap:balance;
+  }
+  .lede{
+    margin:0;
+    max-width:62ch;
+    color:var(--ink-2);
+    font-size:16px;
+  }
+
+  /* ---- the recorded stage ---- */
+  .stage{
+    margin-top:26px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .stage-bar{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:baseline;
+    gap:6px 14px;
+    padding:9px 14px;
+    background:var(--surface-2);
+    border-bottom:1px solid var(--line);
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    color:var(--ink-2);
+  }
+  .stage-bar strong{
+    color:var(--ink);
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .canvas-holder{
+    position:relative;
+    background:var(--floor);
+  }
+  canvas{display:block;width:100%;height:auto;max-width:100%;}
+
+  /* ---- readouts ---- */
+  .readout{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1.7fr;
+    border-top:1px solid var(--line);
+  }
+  .cell{
+    padding:11px 14px;
+    border-right:1px solid var(--line);
+  }
+  .cell:last-child{border-right:none;}
+  .cell dt{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:10px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    margin:0 0 3px;
+  }
+  .cell dd{
+    margin:0;
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:17px;
+    font-weight:500;
+    font-variant-numeric:tabular-nums;
+    color:var(--ink);
+  }
+  #r-state{font-size:14px;}
+  .cell dd.state-pet{color:var(--ink);}
+  .cell dd.state-person{color:var(--ink);}
+  .cell dd.state-alert{color:var(--alert);}
+
+  .verdict{
+    padding:13px 14px;
+    border-top:1px solid var(--line);
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:13px;
+    letter-spacing:.02em;
+    color:var(--ink-2);
+    min-height:46px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .verdict.is-alert{
+    background:var(--alert-soft);
+    color:var(--ink);
+    font-weight:600;
+  }
+  .verdict.is-notice{
+    background:var(--notice-soft);
+    color:var(--ink);
+    font-weight:600;
+  }
+  .verdict.is-notice .dot{background:var(--gold);}
+  .cell dd.state-notice{color:var(--ink);}
+  .dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--line-2);
+    flex:none;
+  }
+  .verdict.is-quiet .dot{background:var(--teal-mid);}
+  .verdict.is-alert .dot{background:var(--alert);}
+
+  /* ---- controls ---- */
+  .controls{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:16px;
+  }
+  button{
+    font-family:inherit;
+    font-size:14px;
+    font-weight:500;
+    color:var(--ink);
+    background:var(--surface);
+    border:1px solid var(--line-2);
+    border-radius:3px;
+    padding:9px 14px;
+    cursor:pointer;
+    transition:background .12s ease, border-color .12s ease;
+  }
+  button:hover{background:var(--surface-2);border-color:var(--teal-mid);}
+  button:focus-visible{outline:2px solid var(--teal-mid);outline-offset:2px;}
+  button.primary{
+    background:var(--teal);
+    border-color:var(--teal);
+    color:var(--surface);
+    font-weight:600;
+  }
+  :root[data-theme="dark"] button.primary,
+  .dark-fix{}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) button.primary{color:#081211;}
+  }
+  :root[data-theme="dark"] button.primary{color:#081211;}
+  button.primary:hover{background:var(--teal-mid);border-color:var(--teal-mid);}
+  button[disabled]{opacity:.45;cursor:default;}
+  button[disabled]:hover{background:var(--surface);border-color:var(--line-2);}
+
+  /* ---- notes ---- */
+  .notes{
+    margin-top:36px;
+    display:grid;
+    gap:22px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  }
+  .note h2{
+    font-size:12px;
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    font-weight:500;
+    margin:0 0 9px;
+    padding-bottom:7px;
+    border-bottom:1px solid var(--line);
+  }
+  .note p{margin:0 0 9px;color:var(--ink-2);font-size:14px;}
+  .note ul{margin:0;padding-left:17px;color:var(--ink-2);font-size:14px;}
+  .note li{margin-bottom:5px;}
+  .note li strong{color:var(--ink);font-weight:600;}
+  .rule-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    font-size:13px;
+  }
+  .rule-list li{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:6px 0;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-2);
+  }
+  .rule-list li span:first-child{min-width:0;}
+  .rule-list li span:last-child{color:var(--ink);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap;flex:none;}
+
+  footer{
+    margin-top:40px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+    font-size:13px;
+    color:var(--ink-3);
+  }
+  footer strong{color:var(--ink-2);font-weight:600;}
+
+  @media (prefers-reduced-motion: reduce){
+    button{transition:none;}
+  }
+
+  /* ---- recording mode: only the frame stays ---- */
+  body.recording .wrap > :not(.stage){display:none;}
+  body.recording .wrap{padding-block:0;padding-inline:0;max-width:none;}
+  body.recording .stage{
+    margin:0 auto;
+    border:none;
+    border-radius:0;
+    /* keep the whole frame on screen: canvas is 500:430, bars take about 170px */
+    max-width:calc((100vh - 170px) * 500 / 430);
+  }
+  body.recording{background:var(--surface);}
+  body.recording .readout{grid-template-columns:1fr 1fr 1fr 1fr 1fr 1.7fr;}
+  @media (max-width:640px){ .readout{grid-template-columns:repeat(3,1fr);} }
+  body.recording .cell{padding:9px 10px;}
+  body.recording .cell dd{font-size:15px;}
+  body.recording .stage-bar{font-size:13px;padding:11px 16px;}
+  .hint{
+    margin:8px 0 0;
+    font-size:12px;
+    color:var(--ink-3);
+  }
+  .hint kbd{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    border:1px solid var(--line-2);
+    border-radius:3px;
+    padding:0 5px;
+    font-size:11px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">The Gerontechnology Group</p>
+  <h1>P.A.L.S. tells her the dog is there</h1>
+  <p class="lede">A small unit above the fridge, just below the ceiling, maps the kitchen in distances, not pictures. It learns where everything is, then reacts only to what is new. Pets come into the kitchen for food, and a person at the counter does not always hear them arrive. When a small shape comes in behind her, the kitchen tells her. She never turns into the dog. Nothing goes to the family, because nothing happened.</p>
+
+  <section class="stage" aria-label="Room sensing visualization">
+    <div class="stage-bar">
+      <strong>System design visualization</strong>
+      <span>Not footage of the working prototype. Thresholds shown are design values, not validated results.</span>
+    </div>
+
+    <p id="live" aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;"></p>
+    <div class="canvas-holder">
+      <canvas id="room" width="900" height="720" role="img"
+        aria-label="Overhead view of a kitchen with a wall mounted sensor above the fridge casting distance rays, showing a dog, a person, and a fall."></canvas>
+    </div>
+
+    <dl class="readout">
+      <div class="cell"><dt>Kitchen</dt><dd id="r-baseline">not learned</dd></div>
+      <div class="cell"><dt>New returns</dt><dd id="r-returns">0</dd></div>
+      <div class="cell"><dt>Cluster width</dt><dd id="r-width">&mdash;</dd></div>
+      <div class="cell"><dt>Movement</dt><dd id="r-motion">&mdash;</dd></div>
+      <div class="cell"><dt>Told her</dt><dd id="r-still">&mdash;</dd></div>
+      <div class="cell"><dt>Reads as</dt><dd id="r-state">idle</dd></div>
+    </dl>
+
+    <div class="verdict is-quiet" id="verdict">
+      <span class="dot"></span>
+      <span id="verdict-text">Learn the kitchen to begin.</span>
+    </div>
+  </section>
+
+  <div class="controls">
+    <button class="primary" id="btn-run" type="button">Play the story</button>
+    <button id="btn-learn" type="button">Learn the kitchen</button>
+    <button id="btn-stop" type="button">Clear</button>
+    <button id="btn-record" type="button">Recording mode</button>
+  </div>
+  <p class="hint">Recording mode hides everything but the frame and loops the story. Press <kbd>R</kbd> to toggle it, <kbd>Esc</kbd> to leave. Open the page with <kbd>?record</kbd> on the end of the address to start that way.</p>
+
+  <div class="notes">
+    <div class="note">
+      <h2>How it reads a room</h2>
+      <ul>
+        <li><strong>Learns the room.</strong> On startup it measures the distance to everything already there. That map is the baseline.</li>
+        <li><strong>Reacts only to what is new.</strong> A return closer than the baseline means something arrived.</li>
+        <li><strong>Sizes what arrived.</strong> The new returns are grouped and measured across. Width is what separates a dog from a person.</li>
+        <li><strong>Tells her the dog is there.</strong> When a small shape comes in, it announces it in the home, so she never turns from the counter into a dog she did not hear.</li>
+        <li><strong>Leaves the family out of it.</strong> A pet in the room is a word to her, not an alert to anyone else. The moment stays hers.</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <h2>Thresholds in this design</h2>
+      <ul class="rule-list">
+        <li><span>Tier 1: pet</span><span>under 45 cm</span></li>
+        <li><span>Tier 1: human</span><span>45 to 90 cm</span></li>
+        <li><span>Tier 2: pet size</span><span>very small, small, medium, large</span></li>
+        <li><span>Room modeled here</span><span>500 x 400 cm</span></li>
+        <li><span>Rays per sweep</span><span>160, into the room</span></li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <h2>What this page is, and is not</h2>
+      <p><strong>It is</strong> a visualization of how the system is designed to read a room, drawn to the real thresholds and the real room scale.</p>
+      <p><strong>It is not</strong> a recording of the prototype. The pet versus person classification has not yet been tested across a range of breeds and body types. Characterizing where it fails is the validation work still ahead.</p>
+      <p>No camera, no video, nothing worn by the person or the animal.</p>
+    </div>
+  </div>
+
+  <footer>
+    <strong>P.A.L.S., Pet Awareness for Living Safely.</strong> The Gerontechnology Group, LLC.
+    Provisional patent 63/991,588. Trademark 99664426.
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var cv = document.getElementById("room");
+  var ctx = cv.getContext("2d");
+
+  // ---- kitchen model, in centimetres ----
+  var ROOM = { w: 500, h: 400 };
+  var SENSOR = { x: 250, y: 5 };     // on the wall above the fridge, just below the ceiling
+  var RAYS = 160;
+  var MAX_RANGE = 560;
+  var STEP = 2;
+
+  // belowUnit: counter height or lower, so a unit just below the ceiling looks out over it.
+  // Only the walls and the tall pantry stand in its way. The fridge is under it.
+  var FURNITURE = [
+    { x: 6,   y: 6,   w: 62,  h: 72,  label: "pantry",  kind: "pantry" },
+    { x: 215, y: 6,   w: 70,  h: 70,  label: "fridge",  kind: "fridge", belowUnit: true },
+    { x: 296, y: 6,   w: 80,  h: 58,  label: "stove",   kind: "stove",  belowUnit: true },
+    { x: 384, y: 6,   w: 110, h: 58,  label: "sink",    kind: "sink",   belowUnit: true },
+    { x: 6,   y: 90,  w: 54,  h: 210, label: "counter", kind: "counter", belowUnit: true },
+    { x: 260, y: 170, w: 120, h: 80,  label: "island",  kind: "island", belowUnit: true },
+    { x: 70,  y: 312, w: 110, h: 70,  label: "table",   kind: "table",  belowUnit: true },
+    { x: 84,  y: 292, w: 26,  h: 16,  label: "",        kind: "chair",  belowUnit: true },
+    { x: 134, y: 292, w: 26,  h: 16,  label: "",        kind: "chair",  belowUnit: true },
+    { x: 440, y: 330, w: 36,  h: 36,  label: "plant",   kind: "plant",  belowUnit: true }
+  ];
+  var DOGBED = { x: 196, y: 340, w: 46, h: 44 };
+  var MAT = { x: 66, y: 250, w: 26, h: 50 };
+  var BOWLS = [ { x: 79, y: 263, r: 8, kind: "food" }, { x: 79, y: 287, r: 8, kind: "water" } ];
+  var DOOR = { x: 380, w: 56 };            // opening in the bottom wall
+  var STACK = { x: 38, y: 148 };            // clean plates, stacked on the counter
+  var PLATE_SPOTS = [ { x: 38, y: 180 }, { x: 38, y: 208 }, { x: 38, y: 236 } ];
+  var platesPlaced = 0;
+
+  var T = { PET_MAX: 45, PERSON_MAX: 90, SPREAD_MIN: 110, STILL_MS: 3000, GAP: 42 };
+
+  // ---- state ----
+  var baseline = null;
+  var objects = [];         // circles the rays can hit
+  var figures = [];         // what to draw: {kind, x, y, h, pose, gait, t}
+  var scenario = null;
+  var queue = [];
+  var loop = false;
+  var recording = false;
+  var caption = "";
+  var captionAt = 0;
+  var learnAnim = 0;
+  var tracks = [];          // clusters followed over time
+  var alerted = false, alertedAt = 0, alertCentre = null;
+  var petAnnounced = false, announcedAt = 0;
+  var CAPTION_BAND = 30;
+
+  var el = {
+    baseline: document.getElementById("r-baseline"),
+    returns:  document.getElementById("r-returns"),
+    width:    document.getElementById("r-width"),
+    motion:   document.getElementById("r-motion"),
+    still:    document.getElementById("r-still"),
+    state:    document.getElementById("r-state"),
+    verdict:  document.getElementById("verdict"),
+    vtext:    document.getElementById("verdict-text")
+  };
+
+  function tok(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function lerp(a, b, t){ return a + (b - a) * t; }
+  function clamp01(t){ return t < 0 ? 0 : t > 1 ? 1 : t; }
+  function ease(t){ t = clamp01(t); return t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2) / 2; }
+
+  // ---- geometry ----
+  function inFurniture(x, y){
+    for (var i = 0; i < FURNITURE.length; i++){
+      var f = FURNITURE[i];
+      if (f.belowUnit) continue;
+      if (x >= f.x && x <= f.x + f.w && y >= f.y && y <= f.y + f.h) return true;
+    }
+    return false;
+  }
+  function inObjects(x, y, objs){
+    for (var i = 0; i < objs.length; i++){
+      var o = objs[i], dx = x - o.x, dy = y - o.y;
+      if (dx*dx + dy*dy <= o.r*o.r) return true;
+    }
+    return false;
+  }
+  function cast(angle, objs){
+    var ca = Math.cos(angle), sa = Math.sin(angle);
+    for (var d = STEP; d <= MAX_RANGE; d += STEP){
+      var x = SENSOR.x + ca * d, y = SENSOR.y + sa * d;
+      if (x < 0 || y < 0 || x > ROOM.w || y > ROOM.h) return { d: d, hit: "wall", x: x, y: y };
+      if (objs.length && inObjects(x, y, objs))       return { d: d, hit: "object", x: x, y: y };
+      if (inFurniture(x, y))                          return { d: d, hit: "furniture", x: x, y: y };
+    }
+    return { d: MAX_RANGE, hit: "none", x: SENSOR.x + ca*MAX_RANGE, y: SENSOR.y + sa*MAX_RANGE };
+  }
+  // the unit sweeps the half circle facing into the kitchen
+  function scan(objs){
+    var out = [], a0 = 0.03, a1 = Math.PI - 0.03;
+    for (var i = 0; i < RAYS; i++) out.push(cast(a0 + (a1 - a0) * (i / (RAYS - 1)), objs));
+    return out;
+  }
+
+  // ---- messages ----
+  var liveEl = document.getElementById("live");
+  function setCaption(text){ if (text === caption) return; caption = text; captionAt = performance.now(); if (liveEl) liveEl.textContent = text; }
+  function say(mode, text){
+    el.vtext.textContent = text;
+    el.verdict.className = "verdict " + (mode === "alert" ? "is-alert" : mode === "notice" ? "is-notice" : "is-quiet");
+  }
+  function resetReadouts(){
+    el.returns.textContent = "0";
+    el.width.innerHTML = "&mdash;"; el.motion.innerHTML = "&mdash;"; el.still.innerHTML = "&mdash;";
+    el.state.textContent = "idle"; el.state.className = "";
+  }
+
+  function learnRoom(){
+    baseline = scan([]).map(function(r){ return r.d; });
+    learnAnim = performance.now();
+    el.baseline.textContent = "learned";
+    say("quiet", "Kitchen learned. It now reacts only to what is new.");
+    setCaption("It learns the kitchen.");
+  }
+
+  // ---- bodies the rays hit ----
+  function personParts(x, y, h, gait){
+    var px = Math.cos(h + Math.PI / 2), py = Math.sin(h + Math.PI / 2);
+    var sway = Math.sin(gait) * 2.5;
+    return [
+      { x: x + px * 14 + Math.cos(h) * sway, y: y + py * 14 + Math.sin(h) * sway, r: 14 },
+      { x: x - px * 14 - Math.cos(h) * sway, y: y - py * 14 - Math.sin(h) * sway, r: 14 },
+      { x: x, y: y, r: 10 }
+    ];
+  }
+  function dogParts(x, y, h){
+    var fx = Math.cos(h), fy = Math.sin(h);
+    return [
+      { x: x - fx * 9,  y: y - fy * 9,  r: 8.5 },
+      { x: x,           y: y,           r: 8.8 },
+      { x: x + fx * 9,  y: y + fy * 9,  r: 8.5 },
+      { x: x + fx * 18, y: y + fy * 18, r: 6 }
+    ];
+  }
+  function fallenParts(x, y, h, t){
+    var L = lerp(30, 168, t), fx = Math.cos(h), fy = Math.sin(h);
+    var along = function(d, r){ return { x: x + fx * d, y: y + fy * d, r: r }; };
+    return [ along(L*0.5 - 10, 10), along(L*0.36, 11), along(L*0.20, 14), along(L*0.02, 14.5), along(-L*0.16, 13),
+             along(-L*0.30, 9), along(-L*0.41, 8.5), along(-L*0.5 + 8, 8) ];
+  }
+
+  // ---- the story ----
+  var SPOT = {
+    door:    { x: DOOR.x + DOOR.w / 2, y: ROOM.h - 14 },
+    stove:   { x: 336, y: 92,  h: -Math.PI / 2 },
+    counter: { x: 88,  y: 196, h: Math.PI },
+    bowls:   { x: 102, y: 275, h: Math.PI },
+    dogMid:  { x: 236, y: 302 }
+  };
+  function walkTo(A, B, t){ // t in 0..1, returns position and heading
+    var e = ease(t);
+    return { x: lerp(A.x, B.x, e), y: lerp(A.y, B.y, e), h: Math.atan2(B.y - A.y, B.x - A.x) };
+  }
+  function turnTo(h0, h1, t){ // shortest turn
+    var d = ((h1 - h0 + Math.PI * 3) % (Math.PI * 2)) - Math.PI;
+    return h0 + d * ease(t);
+  }
+
+  // one plate: hand goes to the stack, pauses, carries the plate to its spot
+  function plateCycle(ms, t0, spotIndex){
+    var u = (ms - t0) / 1300;
+    var rest = { x: SPOT.counter.x - 22, y: SPOT.counter.y + 6 };
+    var spot = PLATE_SPOTS[Math.min(spotIndex, PLATE_SPOTS.length - 1)];
+    if (u < 0){ return { hand: rest, done: false }; }
+    if (u < 0.4){ var a = ease(u / 0.4); return { hand: { x: lerp(rest.x, STACK.x + 8, a), y: lerp(rest.y, STACK.y, a) }, done: false }; }
+    if (u < 0.5){ return { hand: { x: STACK.x + 8, y: STACK.y }, done: false, carrying: true }; }
+    if (u < 1){ var b = ease((u - 0.5) / 0.5); return { hand: { x: lerp(STACK.x + 8, spot.x + 6, b), y: lerp(STACK.y, spot.y, b) }, done: false, carrying: true }; }
+    return { hand: { x: spot.x + 6, y: spot.y }, done: true };
+  }
+
+  var STORY = {
+    dur: 20200,
+    step: function(ms){
+      var objs = [];
+      figures = [];
+      var mom = null, dog = null;
+      platesPlaced = ms >= 9300 ? (ms >= 10600 ? (ms >= 16500 ? 3 : 2) : 1) : 0;
+
+      // ---- Mom ----
+      if (ms < 2600){                                             // in through the door, to the stove
+        var w = walkTo(SPOT.door, SPOT.stove, ms / 2600);
+        mom = { kind: "person", x: w.x, y: w.y, h: w.h, pose: "walk", gait: ms / 110 };
+        if (ms > 200) setCaption("Mom comes in to cook.");
+      } else if (ms < 6200){                                      // cooking
+        var h1 = turnTo(Math.atan2(SPOT.stove.y - SPOT.door.y, SPOT.stove.x - SPOT.door.x), SPOT.stove.h, (ms - 2600) / 500);
+        mom = { kind: "person", x: SPOT.stove.x, y: SPOT.stove.y, h: h1, pose: "cook", gait: ms / 130 };
+        setCaption("Mom is at the stove.");
+      } else if (ms < 7900){                                      // over to the counter
+        var w2 = walkTo(SPOT.stove, SPOT.counter, (ms - 6200) / 1700);
+        mom = { kind: "person", x: w2.x, y: w2.y, h: w2.h, pose: "walk", gait: ms / 110 };
+        setCaption("Mom moves to the counter.");
+      } else if (ms < 10400){                                     // setting out plates, back to the door
+        var h2 = turnTo(Math.atan2(SPOT.counter.y - SPOT.stove.y, SPOT.counter.x - SPOT.stove.x), SPOT.counter.h, (ms - 7900) / 500);
+        var pc = ms < 9300 ? plateCycle(ms, 8000, 0) : plateCycle(ms, 9300, 1);
+        mom = { kind: "person", x: SPOT.counter.x, y: SPOT.counter.y, h: h2, pose: "plates", gait: ms / 150, hand: pc.hand, carrying: pc.carrying };
+        if (ms < 9000) setCaption("She is setting out plates. Her back is to the door.");
+      } else if (ms < 14200){                                     // she hears it, turns, and there he is
+        var toDog = Math.atan2(SPOT.bowls.y - SPOT.counter.y, SPOT.bowls.x - SPOT.counter.x);
+        var h3 = turnTo(SPOT.counter.h, toDog, (ms - 10400) / 700);
+        mom = { kind: "person", x: SPOT.counter.x, y: SPOT.counter.y, h: h3, pose: ms < 11100 ? "look" : "pat", gait: ms / 160, reach: clamp01((ms - 11100) / 800) };
+        if (ms > 11400) setCaption("She turns. She knew he was there. No trip, no fall.");
+      } else if (ms < 15000){                                     // back to the counter
+        var toDog2 = Math.atan2(SPOT.bowls.y - SPOT.counter.y, SPOT.bowls.x - SPOT.counter.x);
+        var h4 = turnTo(toDog2, SPOT.counter.h, (ms - 14200) / 800);
+        mom = { kind: "person", x: SPOT.counter.x, y: SPOT.counter.y, h: h4, pose: "look", gait: 0 };
+      } else {                                                    // and on with dinner
+        var pc2 = plateCycle(ms, 15200, 2);
+        mom = { kind: "person", x: SPOT.counter.x, y: SPOT.counter.y, h: SPOT.counter.h, pose: "plates", gait: ms / 150, hand: pc2.hand, carrying: pc2.carrying };
+        if (ms > 18800) setCaption("Nothing went to the family, because nothing happened.");
+      }
+
+      // ---- her dog ----
+      if (ms >= 9000 && ms < 12600){                              // in through the door, behind her
+        var d1 = ms < 10600 ? walkTo(SPOT.door, SPOT.dogMid, (ms - 9000) / 1600)
+                            : walkTo(SPOT.dogMid, SPOT.bowls, (ms - 10600) / 2000);
+        dog = { kind: "dog", x: d1.x, y: d1.y, h: d1.h, gait: ms / 70 };
+      } else if (ms >= 12600 && ms < 15400){                      // a bite at the bowls
+        dog = { kind: "dog", x: SPOT.bowls.x + Math.sin(ms / 90) * 1.5, y: SPOT.bowls.y + Math.sin(ms / 140) * 1.5, h: SPOT.bowls.h, gait: 0 };
+        if (ms > 13600) setCaption("He has a bite. Dinner goes on.");
+      } else if (ms >= 15400 && ms < 18600){                      // and out again
+        var d2 = ms < 17000 ? walkTo(SPOT.bowls, SPOT.dogMid, (ms - 15400) / 1600)
+                            : walkTo(SPOT.dogMid, SPOT.door, (ms - 17000) / 1600);
+        dog = { kind: "dog", x: d2.x, y: d2.y, h: d2.h, gait: ms / 70 };
+        if (ms > 16000) setCaption("He heads back out.");
+      }
+
+      if (mom){
+        figures.push(mom);
+        objs = objs.concat(mom.kind === "fallen" ? fallenParts(mom.x, mom.y, mom.h, mom.t) : personParts(mom.x, mom.y, mom.h, mom.gait));
+      }
+      if (dog){
+        figures.push(dog);
+        objs = objs.concat(dogParts(dog.x, dog.y, dog.h));
+      }
+      return objs;
+    }
+  };
+
+  function play(){
+    if (!baseline) learnRoom();
+    scenario = { t0: performance.now(), dur: STORY.dur };
+    tracks = []; alerted = false; alertCentre = null; petAnnounced = false;
+  }
+
+  var SEQUENCE = ["learn", "story"];
+  function runSequence(){ loop = true; queue = SEQUENCE.slice(); nextInQueue(); }
+  function nextInQueue(){
+    if (!queue.length){
+      if (loop){ setCaption(""); setTimeout(function(){ if (loop){ queue = SEQUENCE.slice(); nextInQueue(); } }, 500); }
+      return;
+    }
+    var item = queue.shift();
+    if (item === "learn"){
+      var rest = queue;
+      clearAll(true);
+      queue = rest;
+      learnRoom();
+      setTimeout(nextInQueue, 1300);
+    } else {
+      play();
+    }
+  }
+  function clearAll(keepLoop){
+    objects = []; figures = []; scenario = null; queue = [];
+    if (!keepLoop) loop = false;
+    tracks = []; alerted = false; alertCentre = null; petAnnounced = false; announcedAt = 0; platesPlaced = 0;
+    resetReadouts(); setCaption("");
+  }
+
+  // ---- analysis: group the new returns, follow each group, read each one ----
+  function analyse(rays, now){
+    var pts = [], i;
+    for (i = 0; i < rays.length; i++){
+      if (rays[i].d < baseline[i] - 8) pts.push({ x: rays[i].x, y: rays[i].y, i: i });
+    }
+    el.returns.textContent = String(pts.length);
+    if (!pts.length){
+      tracks = [];
+      el.width.innerHTML = "&mdash;"; el.motion.innerHTML = "&mdash;"; el.still.textContent = petAnnounced ? "yes" : "no";
+      el.state.textContent = "idle"; el.state.className = "";
+      return { pts: pts, clusters: [] };
+    }
+
+    // split into groups where neighbouring returns sit close together
+    var groups = [[pts[0]]];
+    for (i = 1; i < pts.length; i++){
+      var a = pts[i - 1], b = pts[i];
+      var gap = Math.sqrt((a.x-b.x)*(a.x-b.x) + (a.y-b.y)*(a.y-b.y));
+      if (gap > T.GAP || b.i - a.i > 6) groups.push([b]); else groups[groups.length - 1].push(b);
+    }
+
+    var clusters = groups.map(function(g){
+      var width = 0, cx = 0, cy = 0, best = null;
+      for (var p = 0; p < g.length; p++){
+        cx += g[p].x; cy += g[p].y;
+        for (var q = p + 1; q < g.length; q++){
+          var dx = g[p].x - g[q].x, dy = g[p].y - g[q].y, d = Math.sqrt(dx*dx + dy*dy);
+          if (d > width){ width = d; best = [g[p], g[q]]; }
+        }
+      }
+      return { pts: g, cx: cx / g.length, cy: cy / g.length, width: width, ends: best };
+    });
+
+    // match to tracks by nearest centre
+    var used = {};
+    clusters.forEach(function(c){
+      var bestT = null, bestD = 70;
+      tracks.forEach(function(t, k){
+        if (used[k]) return;
+        var d = Math.sqrt((t.cx-c.cx)*(t.cx-c.cx) + (t.cy-c.cy)*(t.cy-c.cy));
+        if (d < bestD){ bestD = d; bestT = k; }
+      });
+      var t;
+      if (bestT === null){ t = { hist: [], wid: [], stillSince: null, state: "" }; tracks.push(t); used[tracks.length - 1] = true; }
+      else { t = tracks[bestT]; used[bestT] = true; }
+      t.cx = c.cx; t.cy = c.cy; t.seen = now;
+      t.hist.push({ x: c.cx, y: c.cy, t: now });
+      while (t.hist.length > 2 && now - t.hist[0].t > 600) t.hist.shift();
+      t.wid.push({ w: c.width, t: now });
+      while (t.wid.length > 1 && now - t.wid[0].t > 700) t.wid.shift();
+      var w = 0; t.wid.forEach(function(e){ if (e.w > w) w = e.w; });
+      var speed = 0;
+      if (t.hist.length > 1){
+        var h0 = t.hist[0], h1 = t.hist[t.hist.length - 1], dt = (h1.t - h0.t) / 1000;
+        if (dt > 0) speed = Math.sqrt((h1.x-h0.x)*(h1.x-h0.x) + (h1.y-h0.y)*(h1.y-h0.y)) / dt;
+      }
+      c.track = t; c.w = w; c.speed = speed;
+
+      if (w > T.SPREAD_MIN){
+        if (speed < 6){ if (t.stillSince === null) t.stillSince = now; } else t.stillSince = null;
+        var held = t.stillSince === null ? 0 : now - t.stillSince;
+        c.held = held;
+        c.state = held >= T.STILL_MS ? "FALL" : "low, spread";
+      } else {
+        t.stillSince = null; c.held = 0;
+        c.state = w < T.PET_MAX ? "pet" : (w <= T.PERSON_MAX ? "person" : "unclear");
+        c.label = c.state === "pet" ? (w < 24 ? "pet, very small" : "pet, small") : (c.state === "person" ? "human" : c.state);
+      }
+    });
+    tracks = tracks.filter(function(t){ return now - t.seen < 400; });
+
+    // what to say
+    var fall = null, low = null, pet = null, person = null;
+    clusters.forEach(function(c){
+      if (c.state === "FALL" && !fall) fall = c;
+      else if (c.state === "low, spread" && !low) low = c;
+      else if (c.state === "pet" && !pet) pet = c;
+      else if (c.state === "person" && !person) person = c;
+    });
+    var primary = fall || low || pet || person || clusters[0];
+
+    if (fall){
+      if (!alerted){
+        alerted = true; alertedAt = now; alertCentre = { x: fall.cx, y: fall.cy };
+        say("alert", "Fall. Family alerted on their phones, and announced in the home.");
+        setCaption("Wide, and not moving. It calls the family.");
+      }
+    } else if (low){
+      say("quiet", "Something low and wide. Holding to see whether it moves.");
+      if (low.held > 300) setCaption("Wide, and not moving. It waits three counts.");
+    } else if (pet){
+      if (!petAnnounced){
+        petAnnounced = true; announcedAt = now;
+        say("notice", "Pet in the kitchen. P.A.L.S. says so out loud, so she knows he is there. Nothing sent to the family.");
+        setCaption("Hendrix comes in behind her. The kitchen tells her.");
+      } else if (person){
+        say("notice", "Pet and human in the kitchen. She knows where he is.");
+      }
+    } else if (person){
+      say("quiet", "Reads as human. Nothing sent.");
+    } else {
+      say("quiet", "Grouping the returns.");
+    }
+
+    var labels = [];
+    clusters.forEach(function(c){ var L = c.label || c.state; if (labels.indexOf(L) < 0) labels.push(L); });
+    el.width.textContent = Math.round(primary.w) + " cm";
+    el.motion.textContent = primary.speed.toFixed(0) + " cm/s";
+    el.still.textContent = petAnnounced ? "yes" : "no";
+    el.state.textContent = labels.join(" + ");
+    el.state.className = fall ? "state-alert" : (pet && petAnnounced ? "state-notice" : (person ? "state-person" : ""));
+    return { pts: pts, clusters: clusters };
+  }
+
+  // ---- drawing helpers ----
+  function drawDog(x, y, h, gait, fill, ink, resting, scale, P){
+    var fx = Math.cos(h), fy = Math.sin(h), px = -fy, py = fx;
+    var at = function(a, b){ return P(x + fx * a + px * b, y + fy * a + py * b); };
+    var E = function(cx, cy, rx, ry, rot){ ctx.beginPath(); ctx.ellipse(cx, cy, rx * scale, ry * scale, rot, 0, Math.PI * 2); ctx.fill(); };
+    ctx.fillStyle = ink;
+    var step = Math.sin(gait) * 3;
+    [[9, 1, step], [9, -1, -step], [-9, 1, -step], [-9, -1, step]].forEach(function(l){
+      var q = at(l[0] + l[2], l[1] * 9.5); E(q[0], q[1], 3.2, 2.2, h);
+    });
+    ctx.strokeStyle = ink; ctx.lineWidth = Math.max(2, scale * 2.6); ctx.lineCap = "round";
+    var wag = Math.sin(performance.now() / 110) * 0.7;
+    var t0 = at(-16, 0), tc = at(-24, wag * 5), t1 = at(-29, wag * 9);
+    ctx.beginPath(); ctx.moveTo(t0[0], t0[1]); ctx.quadraticCurveTo(tc[0], tc[1], t1[0], t1[1]); ctx.stroke();
+    ctx.fillStyle = fill;
+    var bc = at(-1, 0); E(bc[0], bc[1], 17, 9, h);
+    ctx.globalAlpha = 0.18; ctx.fillStyle = ink; E(bc[0], bc[1], 11, 5, h); ctx.globalAlpha = 1;
+    var hd = at(18, 0);
+    ctx.fillStyle = fill; E(hd[0], hd[1], 7.5, 6.5, h);
+    var sn = [hd[0] + fx * 7.5 * scale, hd[1] + fy * 7.5 * scale]; E(sn[0], sn[1], 4.2, 3, h);
+    ctx.fillStyle = ink;
+    [1, -1].forEach(function(sgn){
+      var e = [hd[0] + (-fx * 2 + px * sgn * 7) * scale, hd[1] + (-fy * 2 + py * sgn * 7) * scale];
+      E(e[0], e[1], 4.2, 2.4, h + sgn * 0.6);
+    });
+    ctx.beginPath(); ctx.arc(sn[0] + fx * 3.2 * scale, sn[1] + fy * 3.2 * scale, 1.6 * scale, 0, Math.PI * 2); ctx.fill();
+  }
+
+  function drawPerson(f, fill, ink, hair, scale, P){
+    var fx = Math.cos(f.h), fy = Math.sin(f.h), px = -fy, py = fx;
+    var at = function(a, b){ return P(f.x + fx * a + px * b, f.y + fy * a + py * b); };
+    var E = function(c, rx, ry, rot){ ctx.beginPath(); ctx.ellipse(c[0], c[1], rx * scale, ry * scale, rot, 0, Math.PI * 2); ctx.fill(); };
+    var line = function(a, b, w){ ctx.lineWidth = Math.max(2, scale * w); ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); };
+    ctx.lineCap = "round";
+
+    if (f.kind === "fallen"){
+      var L = lerp(30, 168, f.t);
+      ctx.fillStyle = fill; E(at(0, 0), L * 0.5, 15, f.h);
+      ctx.strokeStyle = ink;
+      var sh = at(L * 0.22, 0);
+      [1, -1].forEach(function(s){ line(sh, at(L * 0.16, s * 30 * f.t), 4.5); });
+      var hip = at(-L * 0.2, 0);
+      [1, -1].forEach(function(s){ line(hip, at(-L * 0.5 + 6, s * 9), 5); });
+      ctx.fillStyle = hair; E(at(L * 0.5 - 10, 0), 10.5, 10.5, 0);
+      return;
+    }
+
+    // arms first, so the body sits on top of the shoulders
+    ctx.strokeStyle = ink;
+    var lh, rh;
+    if (f.pose === "cook"){
+      var stir = f.gait * 1.6;
+      lh = at(20, -10); rh = at(20 + Math.cos(stir) * 5, 8 + Math.sin(stir) * 5);
+    } else if (f.pose === "chop"){
+      var chop = Math.abs(Math.sin(f.gait * 2)) * 6;
+      lh = at(19, -9); rh = at(14 + chop, 9);
+    } else if (f.pose === "plates"){
+      lh = at(16, -8); rh = f.hand ? P(f.hand.x, f.hand.y) : at(16, 8);
+    } else if (f.pose === "look"){
+      lh = at(-2, -24); rh = at(-2, 24);
+    } else if (f.pose === "pat"){
+      var rc = ease(f.reach || 0);
+      lh = at(-2, -24); rh = at(lerp(-2, 26, rc), lerp(24, 6, rc));
+    } else {
+      var sw = Math.sin(f.gait) * 11;
+      lh = at(sw, -27); rh = at(-sw, 27);
+    }
+    line(at(2, -19), lh, 5); line(at(2, 19), rh, 5);
+    ctx.fillStyle = ink;
+    E(lh, 4, 4, 0);
+    if (f.pose === "plates" && f.carrying){        // a plate in hand
+      ctx.fillStyle = tok("--fridge"); ctx.beginPath(); ctx.arc(rh[0], rh[1], 9 * scale, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = tok("--counter-ink"); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(rh[0], rh[1], 6 * scale, 0, Math.PI * 2); ctx.stroke();
+      ctx.fillStyle = ink; E(rh, 3.2, 3.2, 0);
+    } else if (f.pose === "pat"){                  // open palm, held out to him
+      ctx.strokeStyle = ink; ctx.lineWidth = Math.max(2, scale * 2.4);
+      ctx.beginPath(); ctx.arc(rh[0], rh[1], 5 * scale, 0, Math.PI * 2); ctx.stroke();
+      ctx.fillStyle = fill; ctx.beginPath(); ctx.arc(rh[0], rh[1], 5 * scale, 0, Math.PI * 2); ctx.fill();
+    } else {
+      E(rh, 4, 4, 0);
+    }
+
+    // shoulders and torso, a little narrower at the back
+    ctx.fillStyle = fill;
+    E(at(1, 0), 11, 25, f.h);
+    E(at(-6, 0), 8, 19, f.h);
+    // apron strap for the cook
+    if (f.pose === "cook" || f.pose === "chop"){
+      ctx.strokeStyle = ink; ctx.globalAlpha = 0.35; line(at(3, -12), at(3, 12), 2.5); ctx.globalAlpha = 1;
+    }
+    // head: silver hair, with a parting
+    ctx.fillStyle = hair; E(at(0, 0), 10.5, 10.5, 0);
+    ctx.strokeStyle = ink; ctx.globalAlpha = 0.25; line(at(-9, 1.5), at(7, 1.5), 1.6); ctx.globalAlpha = 1;
+  }
+
+  function fit(){
+    var holder = cv.parentNode;
+    var cssW = holder.clientWidth || 880;
+    var cssH = cssW * (ROOM.h + CAPTION_BAND) / ROOM.w;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = Math.round(cssW * dpr); cv.height = Math.round(cssH * dpr);
+    cv.style.height = cssH + "px";
+    return { cssW: cssW, cssH: cssH, dpr: dpr };
+  }
+  var view = fit();
+  window.addEventListener("resize", function(){ view = fit(); });
+
+  function draw(rays, res, now){
+    var w = cv.width, h = cv.height;
+    var pad = Math.round(Math.min(w, h) * 0.055);
+    var scale = (w - pad * 2) / ROOM.w;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = tok("--floor"); ctx.fillRect(0, 0, w, h);
+
+    var C_wall = tok("--wall"), C_ray = tok("--ray"), C_teal = tok("--teal"), C_mid = tok("--teal-mid");
+    var C_hit = tok("--hit"), C_alert = tok("--alert"), C_ink3 = tok("--ink-3"), C_gold = tok("--gold");
+    var P = function(x, y){ return [pad + x * scale, pad + y * scale]; };
+    var R = function(x, y, ww, hh, rad){ ctx.beginPath(); ctx.roundRect(pad + x*scale, pad + y*scale, ww*scale, hh*scale, rad*scale); };
+
+    // mat and bowls, dog bed
+    ctx.fillStyle = tok("--mat"); R(MAT.x, MAT.y, MAT.w, MAT.h, 4); ctx.fill();
+    BOWLS.forEach(function(b){
+      var bp = P(b.x, b.y);
+      ctx.fillStyle = tok("--" + b.kind); ctx.beginPath(); ctx.arc(bp[0], bp[1], b.r * scale, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = tok("--floor"); ctx.globalAlpha = 0.35; ctx.beginPath(); ctx.arc(bp[0], bp[1], b.r * 0.55 * scale, 0, Math.PI * 2); ctx.fill(); ctx.globalAlpha = 1;
+    });
+    ctx.fillStyle = tok("--dogbed"); R(DOGBED.x, DOGBED.y, DOGBED.w, DOGBED.h, 10); ctx.fill();
+    ctx.fillStyle = tok("--dogbed-ink"); ctx.globalAlpha = 0.5; R(DOGBED.x + 6, DOGBED.y + 6, DOGBED.w - 12, DOGBED.h - 12, 8); ctx.fill(); ctx.globalAlpha = 1;
+
+    // furniture
+    FURNITURE.forEach(function(f){
+      if (f.kind === "plant"){
+        var cx = pad + (f.x + f.w/2)*scale, cy = pad + (f.y + f.h/2)*scale;
+        ctx.fillStyle = tok("--pot"); ctx.beginPath(); ctx.arc(cx, cy, f.w*0.36*scale, 0, Math.PI*2); ctx.fill();
+        ctx.fillStyle = tok("--plant");
+        for (var k = 0; k < 6; k++){
+          var a = k / 6 * Math.PI * 2 + now / 4000;
+          ctx.beginPath(); ctx.ellipse(cx + Math.cos(a)*f.w*0.22*scale, cy + Math.sin(a)*f.w*0.22*scale, f.w*0.28*scale, f.w*0.13*scale, a, 0, Math.PI*2); ctx.fill();
+        }
+        return;
+      }
+      var fill = tok("--" + f.kind), ink = tok("--" + f.kind + "-ink");
+      ctx.fillStyle = fill; R(f.x, f.y, f.w, f.h, f.kind === "chair" ? 3 : 5); ctx.fill();
+      ctx.fillStyle = ink;
+      if (f.kind === "fridge"){
+        R(f.x + 4, f.y + 4, f.w - 8, f.h - 8, 4); ctx.globalAlpha = 0.35; ctx.fill(); ctx.globalAlpha = 1;
+        R(f.x + f.w/2 - 1.5, f.y + 4, 3, f.h - 8, 1); ctx.fill();
+      } else if (f.kind === "stove"){
+        [[0.28,0.35],[0.72,0.35],[0.28,0.72],[0.72,0.72]].forEach(function(b){
+          ctx.beginPath(); ctx.arc(pad + (f.x + f.w*b[0])*scale, pad + (f.y + f.h*b[1])*scale, 8*scale, 0, Math.PI*2); ctx.fill();
+        });
+        // a pot on the front left burner
+        ctx.fillStyle = tok("--fridge-ink"); ctx.beginPath(); ctx.arc(pad + (f.x + f.w*0.28)*scale, pad + (f.y + f.h*0.72)*scale, 10*scale, 0, Math.PI*2); ctx.fill();
+        ctx.fillStyle = tok("--fridge"); ctx.beginPath(); ctx.arc(pad + (f.x + f.w*0.28)*scale, pad + (f.y + f.h*0.72)*scale, 7*scale, 0, Math.PI*2); ctx.fill();
+      } else if (f.kind === "sink"){
+        R(f.x + 18, f.y + 12, f.w - 36, f.h - 24, 6); ctx.fill();
+        ctx.fillStyle = tok("--stove-ink"); ctx.beginPath(); ctx.arc(pad + (f.x + f.w/2)*scale, pad + (f.y + 6)*scale, 3*scale, 0, Math.PI*2); ctx.fill();
+      } else if (f.kind === "pantry"){
+        R(f.x + f.w/2 - 1.5, f.y + 4, 3, f.h - 8, 1); ctx.fill();
+        ctx.globalAlpha = 0.6; R(f.x + f.w/2 - 9, f.y + f.h/2 - 2, 5, 4, 1); ctx.fill(); R(f.x + f.w/2 + 4, f.y + f.h/2 - 2, 5, 4, 1); ctx.fill(); ctx.globalAlpha = 1;
+      } else if (f.kind === "counter" || f.kind === "island" || f.kind === "table"){
+        ctx.globalAlpha = 0.5; R(f.x + 6, f.y + 6, f.w - 12, f.h - 12, 3); ctx.fill(); ctx.globalAlpha = 1;
+        if (f.kind === "counter"){ // plates: a stack, and the ones she has set out
+          var plate = function(px, py, r){
+            ctx.fillStyle = tok("--fridge"); ctx.beginPath(); ctx.arc(px, py, r * scale, 0, Math.PI * 2); ctx.fill();
+            ctx.strokeStyle = tok("--counter-ink"); ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(px, py, r * 0.66 * scale, 0, Math.PI * 2); ctx.stroke();
+          };
+          var left = 3 - platesPlaced;
+          for (var si = 0; si < left; si++){ var sp = P(STACK.x, STACK.y - si * 1.5); plate(sp[0], sp[1], 9); }
+          for (var pi = 0; pi < platesPlaced; pi++){ var pp = P(PLATE_SPOTS[pi].x, PLATE_SPOTS[pi].y); plate(pp[0], pp[1], 9); }
+        }
+      } else if (f.kind === "chair"){
+        ctx.globalAlpha = 0.6; R(f.x + 3, f.y + 3, f.w - 6, f.h - 6, 2); ctx.fill(); ctx.globalAlpha = 1;
+      }
+      if (f.label){
+        ctx.fillStyle = C_ink3; ctx.font = "500 " + Math.round(scale * 9.5) + "px 'IBM Plex Mono', monospace"; ctx.textAlign = "center";
+        ctx.fillText(f.label, pad + (f.x + f.w/2)*scale, pad + (f.y + f.h + 12)*scale);
+      }
+    });
+
+    // steam from the pot while Mom is at the stove
+    var cooking = figures.some(function(f){ return f.pose === "cook"; });
+    if (cooking){
+      var potX = pad + (296 + 80 * 0.28) * scale, potY = pad + (6 + 58 * 0.72) * scale;
+      for (var st = 0; st < 4; st++){
+        var ph2 = ((now / 1500) + st * 0.25) % 1;
+        var sx2 = potX + Math.sin((now / 400) + st * 1.7) * scale * 4 + (st - 1.5) * scale * 4;
+        var sy2 = potY - scale * 6 - ph2 * scale * 34;
+        ctx.fillStyle = tok("--line-2"); ctx.globalAlpha = (1 - ph2) * 0.9;
+        ctx.beginPath(); ctx.arc(sx2, sy2, (2.5 + ph2 * 4) * scale, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    // walls, with a doorway on the far wall
+    ctx.strokeStyle = C_wall; ctx.lineWidth = Math.max(2, scale * 3);
+    ctx.strokeRect(pad, pad, ROOM.w * scale, ROOM.h * scale);
+    var wy = pad + ROOM.h * scale;
+    ctx.fillStyle = tok("--floor"); ctx.fillRect(pad + DOOR.x * scale, wy - scale * 2.5, DOOR.w * scale, scale * 5);
+    ctx.strokeStyle = C_wall; ctx.lineWidth = 1.5; ctx.globalAlpha = 0.7;
+    ctx.beginPath(); ctx.arc(pad + DOOR.x * scale, wy, DOOR.w * scale, -Math.PI / 2, 0); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(pad + DOOR.x * scale, wy); ctx.lineTo(pad + DOOR.x * scale, wy - DOOR.w * scale); ctx.stroke();
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = C_ink3; ctx.font = "500 " + Math.round(scale * 9.5) + "px 'IBM Plex Mono', monospace"; ctx.textAlign = "center";
+    ctx.fillText("door", pad + (DOOR.x + DOOR.w / 2) * scale, wy - scale * 8);
+
+    // rays
+    var s = P(SENSOR.x, SENSOR.y);
+    var sweep = learnAnim ? Math.min(1, (now - learnAnim) / 900) : 1;
+    var beam = ((now / 2400) % 1) * rays.length;
+    for (var i = 0; i < rays.length; i++){
+      if (i / rays.length > sweep) continue;
+      var r = rays[i], isNew = baseline && r.d < baseline[i] - 8, p = P(r.x, r.y);
+      var trail = (i - beam + rays.length) % rays.length, glow = trail < 14 ? (1 - trail / 14) : 0;
+      ctx.beginPath(); ctx.moveTo(s[0], s[1]); ctx.lineTo(p[0], p[1]);
+      if (isNew){ ctx.strokeStyle = alerted ? C_alert : C_mid; ctx.lineWidth = Math.max(1.2, scale * 1.2); ctx.globalAlpha = 0.95; }
+      else { ctx.strokeStyle = glow > 0 ? C_teal : C_ray; ctx.lineWidth = 1; ctx.globalAlpha = 0.55 + glow * 0.45; }
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+
+    // alert pulse
+    if (alerted && alertCentre){
+      var ac = P(alertCentre.x, alertCentre.y), age = (now - alertedAt) / 1000;
+      for (var k2 = 0; k2 < 3; k2++){
+        var ph = ((age + k2 * 0.45) % 1.35) / 1.35;
+        ctx.beginPath(); ctx.arc(ac[0], ac[1], (18 + ph * 130) * scale, 0, Math.PI * 2);
+        ctx.strokeStyle = C_alert; ctx.lineWidth = Math.max(1.5, scale * 2.2 * (1 - ph)); ctx.globalAlpha = (1 - ph) * 0.75; ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = C_alert; ctx.lineWidth = Math.max(2, scale * 3); ctx.globalAlpha = 0.35 + 0.35 * Math.sin(age * 5);
+      ctx.strokeRect(pad, pad, ROOM.w * scale, ROOM.h * scale); ctx.globalAlpha = 1;
+    }
+
+    // the people
+    figures.forEach(function(f){
+      if (f.kind === "dog"){
+        drawDog(f.x, f.y, f.h, f.gait, tok("--dog"), tok("--dog-ink"), false, scale, P);
+        ctx.fillStyle = tok("--ink"); ctx.font = "600 " + Math.round(scale * 12) + "px 'IBM Plex Sans', sans-serif"; ctx.textAlign = "left";
+        var lp = P(f.x, f.y); ctx.fillText("Hendrix", lp[0] - scale * 12, lp[1] + scale * 22);
+      } else {
+        var fillP = alerted && f.kind === "fallen" ? C_alert : tok("--person");
+        var inkP = alerted && f.kind === "fallen" ? C_alert : tok("--person-ink");
+        drawPerson(f, fillP, inkP, tok("--hair"), scale, P);
+        ctx.fillStyle = tok("--ink"); ctx.font = "600 " + Math.round(scale * 12) + "px 'IBM Plex Sans', sans-serif"; ctx.textAlign = "left";
+        var mp = P(f.x, f.y); ctx.fillText("Mom", mp[0] - scale * 10, mp[1] + scale * (f.kind === "fallen" ? 26 : 34));
+      }
+    });
+
+    // returns and the measured width of each group
+    if (res && res.clusters.length){
+      res.clusters.forEach(function(c){
+        var col = tok("--ink");
+        ctx.fillStyle = c.state === "FALL" ? C_alert : (c.state === "pet" ? C_gold : C_hit);
+        c.pts.forEach(function(pt){ var q = P(pt.x, pt.y); ctx.beginPath(); ctx.arc(q[0], q[1], Math.max(3, scale * 3.4), 0, Math.PI * 2); ctx.fill(); });
+        if (c.ends && c.width > 8){
+          var p1 = P(c.ends[0].x, c.ends[0].y), p2 = P(c.ends[1].x, c.ends[1].y);
+          ctx.strokeStyle = col; ctx.lineWidth = Math.max(1.5, scale * 1.1); ctx.setLineDash([scale * 4, scale * 3]);
+          ctx.beginPath(); ctx.moveTo(p1[0], p1[1]); ctx.lineTo(p2[0], p2[1]); ctx.stroke(); ctx.setLineDash([]);
+          // label on the open side: to the right unless that runs into the wall
+          var text = Math.round(c.w) + " cm  " + (c.label || c.state);
+          ctx.font = "600 " + Math.round(scale * 12) + "px 'IBM Plex Mono', monospace";
+          var tw2 = ctx.measureText(text).width;
+          var maxX = 0, minX = Infinity;
+          c.pts.forEach(function(pt){ if (pt.x > maxX) maxX = pt.x; if (pt.x < minX) minX = pt.x; });
+          var lx = pad + (maxX + 34) * scale, ly = pad + c.cy * scale + scale * 4;
+          ctx.textAlign = "left";
+          if (lx + tw2 > pad + ROOM.w * scale - scale * 6){ lx = pad + (minX - 34) * scale; ctx.textAlign = "right"; }
+          ctx.fillStyle = tok("--floor"); ctx.globalAlpha = 0.85;
+          var bxs = ctx.textAlign === "left" ? lx - scale * 4 : lx - tw2 - scale * 4;
+          ctx.fillRect(bxs, ly - scale * 11, tw2 + scale * 8, scale * 15);
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = col;
+          ctx.fillText(text, lx, ly);
+        }
+      });
+    }
+
+    // the unit
+    ctx.fillStyle = C_teal; ctx.beginPath(); ctx.arc(s[0], s[1], Math.max(3, scale * 4.2), 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = C_teal; ctx.lineWidth = Math.max(1, scale * 0.8); ctx.globalAlpha = 0.5;
+    ctx.beginPath(); ctx.arc(s[0], s[1], Math.max(7, scale * 9), 0, Math.PI * 2); ctx.stroke(); ctx.globalAlpha = 1;
+    // the unit's label, in its own box in the clear space between the pantry and the fridge
+    var lines = ["wall unit", "above the fridge,", "just below the ceiling"];
+    var lf = Math.round(scale * 9.6);
+    ctx.font = "500 " + lf + "px 'IBM Plex Mono', monospace";
+    var lw = 0; lines.forEach(function(t){ lw = Math.max(lw, ctx.measureText(t).width); });
+    var bxL = pad + 74 * scale, byL = pad + 12 * scale, bwL = lw + scale * 12, bhL = lf * 1.35 * lines.length + scale * 8;
+    ctx.fillStyle = tok("--floor"); ctx.beginPath(); ctx.roundRect(bxL, byL, bwL, bhL, scale * 3); ctx.fill();
+    ctx.strokeStyle = C_wall; ctx.lineWidth = 1; ctx.stroke();
+    ctx.fillStyle = tok("--ink"); ctx.textAlign = "left"; ctx.textBaseline = "top";
+    lines.forEach(function(t, li){ ctx.fillText(t, bxL + scale * 6, byL + scale * 4 + li * lf * 1.35); });
+    ctx.textBaseline = "alphabetic";
+    // leader from the box to the unit
+    ctx.strokeStyle = C_teal; ctx.lineWidth = 1; ctx.globalAlpha = 0.7;
+    ctx.beginPath(); ctx.moveTo(bxL + bwL, byL + bhL / 2); ctx.lineTo(s[0] - scale * 6, s[1] + scale * 3); ctx.stroke();
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = tok("--ink"); ctx.font = "500 " + Math.round(scale * 11) + "px 'IBM Plex Mono', monospace";
+    ctx.textAlign = "center";
+    ctx.fillText("500 cm", pad + ROOM.w * scale * 0.5, pad - scale * 5);
+    ctx.save(); ctx.translate(pad - scale * 6, pad + (ROOM.h * scale) / 2); ctx.rotate(-Math.PI / 2); ctx.fillText("400 cm", 0, 0); ctx.restore();
+
+    // the announcement itself, spoken in the home
+    if (petAnnounced && now - announcedAt < 5200){
+      var age2 = (now - announcedAt) / 1000;
+      var pop = Math.min(1, age2 / 0.25), fadeOut = age2 > 4.6 ? Math.max(0, 1 - (age2 - 4.6) / 0.6) : 1;
+      ctx.globalAlpha = pop * fadeOut;
+      // sound rings from the unit
+      for (var rr = 0; rr < 3; rr++){
+        var rp = ((age2 + rr * 0.35) % 1.05) / 1.05;
+        ctx.beginPath(); ctx.arc(s[0], s[1], (12 + rp * 70) * scale, 0.15, Math.PI - 0.15);
+        ctx.strokeStyle = C_gold; ctx.lineWidth = Math.max(1.5, scale * 2 * (1 - rp)); ctx.globalAlpha = pop * fadeOut * (1 - rp) * 0.8; ctx.stroke();
+      }
+      ctx.globalAlpha = pop * fadeOut;
+      // speech bubble
+      var msg = "\u201cHeads up. Pet behind you.\u201d";     // placeholder wording, not decided
+      ctx.font = "600 " + Math.round(scale * 13) + "px 'IBM Plex Sans', sans-serif";
+      var tw = ctx.measureText(msg).width, bw = tw + scale * 24, bh = scale * 30;
+      var bx = s[0] + scale * 30, by = s[1] + scale * 46;
+      if (bx + bw > w - pad) bx = w - pad - bw;
+      ctx.fillStyle = tok("--notice-soft");
+      ctx.beginPath(); ctx.roundRect(bx, by, bw, bh, scale * 6); ctx.fill();
+      ctx.strokeStyle = C_gold; ctx.lineWidth = Math.max(1.5, scale * 1.4); ctx.stroke();
+      ctx.fillStyle = C_gold;
+      ctx.beginPath(); ctx.moveTo(bx + scale * 18, by); ctx.lineTo(bx + scale * 30, by); ctx.lineTo(s[0] + scale * 8, s[1] + scale * 12); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = tok("--ink"); ctx.textAlign = "left"; ctx.textBaseline = "middle";
+      ctx.fillText(msg, bx + scale * 12, by + bh / 2);
+      ctx.textBaseline = "alphabetic";
+      ctx.font = "500 " + Math.round(scale * 9.5) + "px 'IBM Plex Mono', monospace"; ctx.fillStyle = tok("--ink");
+      ctx.fillText("announced in the home", bx + scale * 12, by + bh + scale * 12);
+      ctx.globalAlpha = 1;
+    }
+
+    // caption band
+    var bandTop = pad + ROOM.h * scale, bandH = h - bandTop;
+    if (caption){
+      var fade = Math.min(1, (now - captionAt) / 350), rise = (1 - fade) * scale * 6;
+      ctx.globalAlpha = fade;
+      ctx.fillStyle = tok("--ink");
+      var capSize = Math.round(scale * 19);
+      ctx.font = "600 " + capSize + "px 'IBM Plex Sans', sans-serif";
+      while (capSize > 10 && ctx.measureText(caption).width > w - pad * 2){ capSize -= 1; ctx.font = "600 " + capSize + "px 'IBM Plex Sans', sans-serif"; }
+      ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.fillText(caption, w / 2, bandTop + bandH * 0.52 + rise);
+      ctx.textBaseline = "alphabetic"; ctx.globalAlpha = 1;
+    }
+  }
+
+  // ---- loop ----
+  function frame(now){
+    if (scenario){
+      var ms = now - scenario.t0;
+      if (ms >= scenario.dur){
+        if (!scenario.held) scenario.held = now;
+        if (now - scenario.held > 2200){
+          scenario = null; objects = []; figures = []; alerted = false; alertCentre = null;
+          resetReadouts(); say("quiet", "Nothing new in the kitchen.");
+          setTimeout(nextInQueue, 200);
+        }
+      } else {
+        objects = STORY.step(ms);
+      }
+    }
+    var rays = scan(objects);
+    var res = baseline ? analyse(rays, now) : null;
+    draw(rays, res, now);
+    requestAnimationFrame(frame);
+  }
+
+  // ---- wiring ----
+  document.getElementById("btn-run").addEventListener("click", function(){ clearAll(); runSequence(); });
+  document.getElementById("btn-learn").addEventListener("click", function(){ clearAll(); learnRoom(); });
+  document.getElementById("btn-stop").addEventListener("click", function(){ clearAll(); say("quiet", baseline ? "Nothing new in the kitchen." : "Learn the kitchen to begin."); });
+  function setRecording(on){
+    recording = !!on;
+    document.body.classList.toggle("recording", recording);
+    view = fit();
+    if (recording && !loop){ clearAll(); runSequence(); }
+  }
+  document.getElementById("btn-record").addEventListener("click", function(){ setRecording(true); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape") setRecording(false);
+    else if (e.key === "r" || e.key === "R") setRecording(!recording);
+  });
+
+  learnRoom();
+  requestAnimationFrame(frame);
+  if (/[?&]record\b/.test(location.search)) setRecording(true); else runSequence();
+})();
+</script>
+</body>
+</html>
