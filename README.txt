@@ -16,7 +16,7 @@ Recording mode
 Add ?record to the end of the address, or press R on the page. Everything but the frame is hidden and
 the story loops. Press Esc to leave.
 
-Placeholder
-The spoken cue in the frame ("Heads up. Pet behind you.") is placeholder wording, not the final line.
+Spoken cue
+The unit says "Your pet has entered the room." That is the wording shown in the frame.
 
 Provisional patent 63/991,588. Trademark 99664426.
